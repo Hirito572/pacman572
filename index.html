@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pac-Man</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Add your CSS styles here */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 100vh;
+      background: linear-gradient(
+        0deg,
+        rgb(207, 39, 151) 0%,
+        rgb(34, 195, 179) 100%
+      );
+    }
+
+    #game-container {
+      position: relative;
+      width: 606px;
+      height: 756px; /* Increased height to accommodate the title and generation display */
+      background-color: rgba(231, 8, 164, 0.5);
+      border: 2px solid rgb(233, 25, 25);
+      border-radius: 10px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column; /* Add column direction to align items vertically */
+    }
+
+    #game-title {
+      font-size: 48px; /* Increased font size for the game title */
+      color: rgb(165, 10, 10);
+      margin-bottom: 20px; /* Margin to separate the title from the rest */
+    }
+
+    #start-button {
+      position: absolute;
+      top: 100px; /* Adjusted top position to be below the title */
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px; /* Increase the font size */
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #game-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+      color: rgb(43, 21, 207);
+    }
+
+    #gameCanvas {
+      display: none;
+    }
+
+    #generation-display {
+      font-size: 24px; /* Font size for generation display */
+      color: rgb(10, 10, 165);
+      margin-bottom: 10px; /* Margin to separate from the rest */
+    }
+
+    .generation-button {
+      font-size: 24px; /* Font size for generation buttons */
+      padding: 10px 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div id="game-title">Pac-Man</div>
+    <div id="generation-display">Generation: 1</div>
+    <button id="start-button">Start Game</button>
+    <div>
+      <button id="generation1-button" class="generation-button">Generation 1</button>
+      <button id="generation2-button" class="generation-button">Generation 2</button>
+    </div>
+    <canvas id="gameCanvas" width="606" height="606"></canvas>
+    <div id="game-message"></div>
+  </div>
+
+  <script src="src/Game.js" type="module"></script>
+</body>
+</html>
